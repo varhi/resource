@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>input</title>
+	<style>
+		body{font:14px/2 'Microsoft YaHei';}
+		input{
+			display:block;
+			outline:none;
+			padding:0;
+			margin:0;
+			border:1px solid #dadada;
+		}
+		input::-webkit-input-placeholder{
+			color:red;/*webkit*/
+		}
+		input::-moz-placeholder{
+			color:green;/*moz*/
+		}
+		input::-ms-input-placeholder{
+			color:yellow;/*ie10+*/
+		}
+		label{
+			display:block;
+			margin-bottom:6px;
+		}
+		.inputSetPadding{
+			padding:7px 5px;
+			width:300px;
+		}		
+		.inputSetHeight{
+			padding:0px 5px;
+			height:28px;
+			line-height:28px;
+			width:300px;
+		}
+		.inputSetEm{
+			line-height:1em;
+		}
+		strong{
+			display:block;
+		}
+	</style>
+</head>
+<body>
+	<label for="userName">用户名</label>
+	<input type="text" placeholder="用户名" class="inputSetPadding" id="userName">
+	<label for="password">密码</label>
+	<input type="text" placeholder="用户名" class="inputSetHeight" id="password">
+	<p>
+		<strong>问题：</strong>
+		input设置高度，通过line-height设置等高值，让placeholder文本值垂直居中，在safari浏览器下不能正常表现；
+		<strong>解决方案：</strong>
+		line-height:1em;
+		<strong>效果：</strong>
+		<input type="text" placeholder="用户名" class="inputSetHeight inputSetEm" id="password">
+	</p>
+	
+</body>
+</html>
